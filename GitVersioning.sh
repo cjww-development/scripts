@@ -21,7 +21,7 @@ echo "$VNUM1 # $VNUM2 # $VNUM3"
 $new_version
 
 if [ "$Type" = "major" ]; then
-	new_version="$((VNUM+1)).0.0"
+	new_version="$((VNUM1+1)).0.0"
 elif [ "$Type" = "minor" ]; then
 	new_version="$VNUM1.$((VNUM2+1)).0"
 elif [ "$Type" = "hotfix" ]; then
