@@ -1,7 +1,7 @@
 #!/bin/bash
 
 $Project="PROJECT_NAME"
-$Type="MAJOR or MINOR or HOTFIX"
+$Type="major or minor or hotfix"
 
 echo "Versioning project $Project with $Type version"
 
@@ -15,9 +15,6 @@ VNUM1=${VERSION_BITS[0]}
 VNUM2=${VERSION_BITS[1]}
 VNUM3=${VERSION_BITS[2]}
 
-#To help debug
-echo "$VNUM1 # $VNUM2 # $VNUM3"
-
 $new_version
 
 if [ "$Type" = "major" ]; then
@@ -28,6 +25,7 @@ elif [ "$Type" = "hotfix" ]; then
 	new_version="$VNUM1.$VNUM2.$((VNUM3+1))"
 else
 	echo "Unrecognised inc version"
+	exit 1
 fi
 
 echo "$Project is now versioned as $new_version"
