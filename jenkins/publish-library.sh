@@ -1,0 +1,1 @@
+sbt -Dversion=$Version -Dbintray.user=<bintray_username> -Dbintray.pass=<bintray_token> publish
